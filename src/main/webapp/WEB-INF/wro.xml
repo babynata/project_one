@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="http://www.isdc.ro/wro">
+    <group name="javaonly-base-scripts">
+        <js minimize="false">classpath:META-INF/resources/webjars/vue-i18n/8.3.0/dist/vue-i18n.js</js>
+    </group>
+</groups>
