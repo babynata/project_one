@@ -26,4 +26,12 @@ public class SinglelyNode<T> {
     public void setNext(SinglelyNode next) {
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        return "SinglelyNode{" +
+                "data=" + data +
+                ", next=" + next +
+                '}';
+    }
 }

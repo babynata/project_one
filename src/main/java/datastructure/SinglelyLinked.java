@@ -24,10 +24,10 @@ public class SinglelyLinked<T> {
 
         SinglelyNode<T> last = head;
         int count = 0;
-        do {
+        while (count < size && last.getNext() != null) {
             last = last.getNext();
             count++;
-        } while (count < size);
+        }
         last.setNext(newNode);
         size++;
     }
@@ -39,7 +39,7 @@ public class SinglelyLinked<T> {
         int count = 0;
         SinglelyNode<T> prev = head;
         SinglelyNode<T> curr = head.getNext();
-        do {
+        while (count < size && curr != null) {
             if (count == index) {
                 newNode.setNext(curr);
                 prev.setNext(newNode);
@@ -49,7 +49,7 @@ public class SinglelyLinked<T> {
                 curr = curr.getNext();
             }
             count++;
-        } while (count < size);
+        }
         size++;
     }
 
@@ -58,11 +58,11 @@ public class SinglelyLinked<T> {
         int count = 0;
         SinglelyNode<T> prev = head;
         SinglelyNode<T> curr = head.getNext();
-        do {
+        while (count < size && curr != null) {
             prev = curr;
             curr = curr.getNext();
             count++;
-        } while (count < size);
+        }
         prev.setNext(null);
         size--;
     }
@@ -85,7 +85,7 @@ public class SinglelyLinked<T> {
         int count = 0;
         SinglelyNode<T> prev = head;
         SinglelyNode<T> curr = head.getNext();
-        do {
+        while (count < size && curr != null) {
             if (curr.getData().equals(object)) {
                 prev.setNext(curr.getNext());
                 break;
@@ -94,7 +94,7 @@ public class SinglelyLinked<T> {
                 curr = curr.getNext();
             }
             count++;
-        } while (count < size);
+        }
         size--;
     }
 
@@ -108,6 +108,14 @@ public class SinglelyLinked<T> {
             System.out.println(next.getData());
             count++;
         } while (count < size);
+    }
+
+    public SinglelyNode<T> getHead() {
+        return head;
+    }
+
+    public void setHead(SinglelyNode<T> head) {
+        this.head = head;
     }
 
     public int getSize() {
