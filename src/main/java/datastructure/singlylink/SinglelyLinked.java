@@ -72,15 +72,11 @@ public class SinglelyLinked<T> {
 
     /*delete the last node of the link*/
     public void delete() {
-        int count = 0;
-        SinglelyNode<T> prev = head;
-        SinglelyNode<T> curr = head.getNext();
-        while (count < size && curr != null) {
-            prev = curr;
-            curr = curr.getNext();
-            count++;
+        SinglelyNode<T> cur = head;
+        while (cur.getNext().getNext() != null && cur.getNext() != null) {
+            cur = cur.getNext();
         }
-        prev.setNext(null);
+        cur.setNext(null);
         size--;
     }
 
