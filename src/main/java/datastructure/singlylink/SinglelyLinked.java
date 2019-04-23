@@ -1,4 +1,4 @@
-package datastructure;
+package datastructure.singlylink;
 
 public class SinglelyLinked<T> {
 
@@ -16,6 +16,12 @@ public class SinglelyLinked<T> {
         SinglelyNode<T> newNode = new SinglelyNode<>(object, null);
         head.setNext(newNode);
         size = 1;
+    }
+
+    public void init(String string, SinglelyLinked<String> link) {
+        for (String s : string.split("")) {
+            link.add(s);
+        }
     }
 
     /*add new node to the last of the link*/
@@ -50,6 +56,17 @@ public class SinglelyLinked<T> {
             }
             count++;
         }
+        size++;
+    }
+
+    public void add(SinglelyNode<T> newNode) {
+        SinglelyNode<T> last = head;
+        int count = 0;
+        while (count < size && last.getNext() != null) {
+            last = last.getNext();
+            count++;
+        }
+        last.setNext(newNode);
         size++;
     }
 

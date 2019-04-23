@@ -1,6 +1,8 @@
-package datastructure;
+package datastructure.singlylink;
 
 public class SinglyLinkedPalindrome {
+
+    private SinglelyLinked<String> link;
 
     public boolean ifIsPalindrome(SinglelyLinked<String> link) {
         SinglelyNode<String> slow = link.getHead();
@@ -58,7 +60,7 @@ public class SinglyLinkedPalindrome {
     }
 
     public SinglelyLinked<String> initLink(String text) {
-        SinglelyLinked<String> link = new SinglelyLinked<>();
+        link = new SinglelyLinked<>();
         for (String s : text.split("")) {
             link.add(s);
         }
